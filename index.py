@@ -26,5 +26,5 @@ data['ISBN13'] = data['ISBN13'].astype(str)
 data.head()
 df = data.iloc[0:50] #1위부터 50위까지
 df = df.iloc[:, [0, 1, 2, 6, 13, 14]] #순번,구분,상품명,출판사,출간일,세일즈포인트
-df.to_excel(today+"_Bestseller_Top50.xlsx", index=False) 
+df.to_csv("Bestseller_Top50.csv", index=False) 
 
