@@ -1,4 +1,3 @@
-#-*- coding:utf-8 -*-
 # Link : https://www.aladin.co.kr/shop/common/wbest_excel.aspx?BestType=Bestseller&BranchType=1&CID=351&Year=2020&Month=3&Week=5 
 # Link : https://www.aladin.co.kr/shop/common/wbest_excel.aspx?BestType=Bestseller&BranchType=1&CID=351&Year="+now.strftime('%Y')+"&Month="+now.strftime('%m')+"&Week=5"
 # 컴퓨터, 모바일 분야 베스트셀러, 스케줄러를 1주일에 한번, 매주 월요일마다
