@@ -39,7 +39,7 @@ jobs:
           from: ${{secrets.MAIL_USERNAME}} 
           subject: Github Actions job result
           body: bestseller
-          attachment : '[{"path":"Bestseller_Top50.csv"}]'
+          attachments : '[{"path":"Bestseller_Top50.csv"}]'
           to: ${{secrets.MAIL_USERNAME}}
     
 
