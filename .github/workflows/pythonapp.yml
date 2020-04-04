@@ -38,7 +38,7 @@ jobs:
           sender: yerim
           from: ${{secrets.MAIL_USERNAME}} 
           subject: Github Actions job result
-          body: ''
+          body: bestseller
           attachment : '[{"path":"Bestseller_Top50.csv"}]'
           to: ${{secrets.MAIL_USERNAME}}
     
