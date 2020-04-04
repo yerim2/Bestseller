@@ -30,18 +30,16 @@ jobs:
       run: |
         python index.py
     - name: Send email
-      uses: dawidd6/action-send-mail@v2.1.0
+      uses: devellany/send-mail@v1.0.2
       with:
-          server_address: smtp.naver.com
-          server_port: 465
-          username: ${{secrets.MAIL_USERNAME}}
+          host: smtp.naver.com
+          account: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
+          sender: yerim
+          from: ${{secrets.MAIL_USERNAME}} 
           subject: Github Actions job result
-          # Literal body:
-          # body: Build job of ${{github.repository}} completed successfully!
-          # Read file contents as body:
-          body: file://Bestseller_Top50.csv
+          body: ''
+          attachment : '[{"path":"Bestseller_Top50.csv"}]'
           to: ${{secrets.MAIL_USERNAME}}
-          from: yerim # <${{secrets.MAIL_USERNAME}}>
-          # Optional content type (defaults to text/plain):
-          content_type: text/csv
+    
+
