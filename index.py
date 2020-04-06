@@ -10,7 +10,7 @@ import pandas as pd
 now = datetime.datetime.now()
 today = now.strftime('%Y%m%d')
 csv_name = today+"_Bestseller.csv"  #실행 날짜로 파일 이름 지정
-url = "https://www.aladin.co.kr/shop/common/wbest_excel.aspx?BestType=Bestseller&BranchType=1&CID=351&Year=2020&Month=3&Week=5 "
+url = "https://www.aladin.co.kr/shop/common/wbest_excel.aspx?BestType=Bestseller&BranchType=1&CID=351&Year=2020&Month=4&Week=1"
 
 def download(url, file_name):
     with open(file_name, "wb") as file:
@@ -24,5 +24,5 @@ data = pd.read_csv(csv_name, encoding='CP949')
 data['ISBN13'] = data['ISBN13'].astype(str)
 df = data.iloc[0:50] #1위부터 50위까지
 df = df.iloc[:, [0, 1, 2, 6, 13, 14]] #순번,구분,상품명,출판사,출간일,세일즈포인트
-df.to_csv('Bestseller_Top50.csv', index=False) 
+df.to_csv(csv_name, index=False) 
 
