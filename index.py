@@ -5,6 +5,7 @@
 from requests import get
 import datetime
 import pandas as pd
+
 #from openpyxl import Workbook
 
 now = datetime.datetime.now()
@@ -24,5 +25,6 @@ data = pd.read_csv(csv_name, encoding='CP949')
 data['ISBN13'] = data['ISBN13'].astype(str)
 df = data.iloc[0:50] #1위부터 50위까지
 df = df.iloc[:, [0, 1, 2, 6, 13, 14]] #순번,구분,상품명,출판사,출간일,세일즈포인트
+df['순번/순위']=df['순번/순위'].round()
 df.to_csv('Bestseller_Top50.csv', index=False) 
 
