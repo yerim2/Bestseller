@@ -22,8 +22,7 @@ if __name__ =='__main__':
 
 data = pd.read_csv(csv_name, encoding='CP949')
 data['ISBN13'] = data['ISBN13'].astype(str)
-data.head()
 df = data.iloc[0:50] #1위부터 50위까지
 df = df.iloc[:, [0, 1, 2, 6, 13, 14]] #순번,구분,상품명,출판사,출간일,세일즈포인트
-df.to_csv("Bestseller_Top50.csv", index=False) 
+df.to_csv('Bestseller_Top50.csv', index=False) 
 
